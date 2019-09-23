@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>   
+    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.0/handlebars.min.js"></script> 
+    <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.1.1/list.min.js"></script>       
+    <script src="socket.io.js"></script>
+</head>
+<body>
+    <div class="container clearfix">
+        <div class="people-list" id="people-list">
+        </div>
+        
+        <div class="chat">
+          <div class="chat-header clearfix">
+            <img src="chat_avatar_01_green.jpg" alt="avatar" />
+            
+            <div class="chat-about">
+              <div class="chat-with"><span id="caller-id">No Active Calls</span></span></div>
+              <div class="chat-num-messages"></div>
+            </div>
+          </div> <!-- end chat-header -->
+          
+          <div class="chat-history">
+            <ul>                            
+            </ul>
+            
+          </div> <!-- end chat-history -->
+          
+          <div class="chat-message clearfix">                        
+            <button id="intervene-button">Intervene</button>
+            <button id="disconnect-button" class="disconnect">Disconnect</button>    
+          </div> <!-- end chat-message -->
+          
+        </div> <!-- end chat -->
+        
+      </div> <!-- end container -->
+    
+    <script id="message-template" type="text/x-handlebars-template">
+      <li class="clearfix">
+        <div class="message-data align-right">
+          <span class="message-data-time" >{{time}}, Today</span> &nbsp; &nbsp;
+          <span class="message-data-name" >Anna</span> <i class="fa fa-circle me"></i>
+        </div>
+        <div class="message other-message float-right">
+          {{messageOutput}}
+        </div>
+      </li>
+    </script>
+    
+    <script id="message-response-template" type="text/x-handlebars-template">
+      <li>
+        <div class="message-data">
+          <span class="message-data-name"><i class="fa fa-circle online"></i> The Callee</span>
+          <span class="message-data-time">{{time}}, Today</span>
+        </div>
+        <div class="message my-message">
+          {{response}}
+        </div>
+      </li>
+    </script>
+
+    <script id="indicator-template" type="text/x-handlebars-template">
+        <li id="input-indicator">
+                <div class="message-data">
+                  <span class="message-data-name"><i class="fa fa-circle online"></i> The Callee</span>
+                  <span class="message-data-time">{{time}}, Today</span>
+                </div>
+                <i class="fa fa-circle online"></i>
+                <i class="fa fa-circle online" style="color: #AED2A6"></i>
+                <i class="fa fa-circle online" style="color:#DAE9DA"></i>
+              </li>
+    </script>
+</body>
+<script src="script.js"></script>
+</html>

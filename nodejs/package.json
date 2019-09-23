@@ -1,0 +1,14 @@
+{
+  "name": "callscreening-backend",
+  "version": "1.0.0",
+  "description": "Simple proxy backend for call screening app",
+  "main": "index.js",
+  "author": "Voximplant",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "express-socket.io-session": "^1.3.5",
+    "socket.io": "^2.2.0"
+  }
+}
